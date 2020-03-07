@@ -29,5 +29,3 @@ RUN pip --no-cache-dir install tqdm keras matplotlib librosa scikit-learn
 RUN pip --no-cache-dir install dill bleach namedtupled
 
 RUN pip --no-cache-dir install PyEMD
-
-RUN pip --no-cache-dir install opencv-python Pillow 
