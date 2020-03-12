@@ -19,8 +19,6 @@ RUN apt-get update
 
 #
 RUN apt-get install -y wget vim htop fish datamash
-
-RUN pip --no-cache-dir install --upgrade pip
  
 RUN pip --no-cache-dir install docopt joblib natsort scipy
 
