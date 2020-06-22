@@ -21,8 +21,6 @@ RUN apt-get update
 #
 RUN apt-get install -y wget vim htop fish datamash graphviz libgraphviz-dev
 
-RUN apt-get install libjpeg libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev
-
 RUN pip3 --no-cache-dir install ipython pandas
 
 RUN pip3 --no-cache-dir install docopt joblib natsort scipy
@@ -37,7 +35,7 @@ RUN pip3 --no-cache-dir install pytorch-pretrained-bert==0.6.1 torch==1.0.1.post
 
 RUN pip3 --no-cache-dir install networkx pathlib pygraphviz
 
-RUN pip3 --no-cache-dir install PIL
+RUN pip3 --no-cache-dir install black check-manifest coverage jarn.viewdoc olefile pycodestyle pyflakes pyroma pytest pytest-cov sphinx-rtd-theme PIL
 
 RUN apt-get install -y git
 
