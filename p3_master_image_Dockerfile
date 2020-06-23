@@ -21,7 +21,9 @@ RUN apt-get update
 #
 RUN apt-get install -y wget vim htop fish datamash graphviz libgraphviz-dev
 
-RUN apt-get install libjpeg libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev
+RUN apt-get install libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev \
+    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk \
+    libharfbuzz-dev libfribidi-dev libxcb1-dev
 
 RUN pip install --upgrade pip
 
@@ -41,7 +43,7 @@ RUN pip3 --no-cache-dir install networkx pathlib pygraphviz
 
 #RUN pip3 --no-cache-dir install black check-manifest coverage jarn.viewdoc olefile pycodestyle pyflakes pyroma pytest pytest-cov sphinx-rtd-theme PIL
 
-RUN pip3 --no-cache-dir install PIL
+RUN pip3 --no-cache-dir install Pillow
 
 RUN apt-get install -y git
 
