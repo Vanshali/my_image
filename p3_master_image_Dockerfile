@@ -47,6 +47,8 @@ RUN pip3 --no-cache-dir install networkx pathlib pygraphviz
 
 RUN pip3 --no-cache-dir install Pillow
 
+RUN pip3 --no-cache-dir install torchvision
+
 RUN apt-get install -y git
 
 # 
