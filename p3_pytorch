@@ -1,0 +1,51 @@
+# Each instruction in this file generates a new layer that gets pushed to your local image cache
+ 
+# Lines preceeded by # are regarded as comments and ignored
+ 
+# The line below states we will base our new image on the Latest Official Ubuntu 
+
+FROM pytorch/pytorch:latest
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Identify the maintainer of an image
+LABEL maintainer="vanshalisharma@iitg.ac.in"
+LABEL version="0.1"
+LABEL description="Pytorch + some other libraries"
+#
+# Update the image to the latest packages
+RUN apt-get update
+
+#
+RUN apt-get install -y wget vim graphviz libgraphviz-dev
+
+RUN apt-get install -y libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev \
+    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk \
+    libharfbuzz-dev libfribidi-dev libxcb1-dev
+
+RUN pip install --upgrade pip
+
+RUN pip3 --no-cache-dir install ipython pandas
+
+RUN pip3 --no-cache-dir install docopt joblib
+
+RUN pip3 --no-cache-dir install tqdm matplotlib
+
+RUN pip3 --no-cache-dir install pathlib
+
+RUN pip3 --no-cache-dir install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+
+RUN pip3 --no-cache-dir install Pillow
+
+RUN pip3 --no-cache-dir install torchvision torchsummary tb-nightly
+
+RUN apt-get install -y git
+
+# 
+RUN apt-get install -y python3-venv
+
+# Install locales
+RUN apt-get install -y locales locales-all
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
